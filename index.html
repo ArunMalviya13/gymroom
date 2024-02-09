@@ -71,9 +71,12 @@
               Welcome to The GYM Room! Feel the JOSH as we push you to your limits and beyond. Download our brochure to
               kickstart your fitness journey today!
             </p>
-            <a href="#"
-              class="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white p-4 border border-orange-500 hover:border-transparent rounded inline-block mt-10 cursor-pointer transition">Download
-              Brochure</a>
+            <!-- Update your Download Brochure button -->
+<a href="#" onclick="downloadBrochure()"
+   class="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white p-4 border border-orange-500 hover:border-transparent rounded inline-block mt-10 cursor-pointer transition">
+   Download Brochure
+</a>
+
           </div>
         </div>
       </div>
@@ -361,5 +364,31 @@
     once: false,
   });
 </script>
+
+  <!-- Script to download Brochure -->
+<script>
+
+  function downloadBrochure() {
+    // Replace 'path/to/your/brochure.pdf' with the actual path to your PDF file
+    var brochureUrl = 'brochure.pdf';
+    
+    // Create a temporary link element
+    var link = document.createElement('a');
+    link.href = brochureUrl;
+    
+    // Set the download attribute with the filename for the downloaded file
+    link.download = 'brochure.pdf';
+    
+    // Append the link to the document body
+    document.body.appendChild(link);
+    
+    // Trigger a click event on the link to start the download
+    link.click();
+    
+    // Remove the link from the document body
+    document.body.removeChild(link);
+  }
+</script>
+
 
 </html>
